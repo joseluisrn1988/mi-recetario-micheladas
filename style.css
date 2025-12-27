@@ -1,120 +1,36 @@
-:root {
-    --primary-color: #ff4500; /* Naranja vibrante */
-    --secondary-color: #32cd32; /* Verde Lima */
-    --dark-bg: #1a1a1a;
-    --text-light: #ffffff;
-}
+/* ... Manten el código anterior y agrega esto al final ... */
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--dark-bg);
-    color: var(--text-light);
-    margin: 0;
-    text-align: center;
-}
-
-.container {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-}
-
-header {
-    background: linear-gradient(180deg, #000 0%, var(--dark-bg) 100%);
-    padding: 40px 0;
-}
-
-.logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-.portada {
-    width: 300px;
-    height: auto;
-    margin-bottom: 15px;
-}
-
-h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
-    margin: 0;
-    color: var(--secondary-color);
-}
-
-.tagline {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    color: #ccc;
-}
-
-.hero h2 {
-    color: var(--primary-color);
-    font-size: 2rem;
-}
-
-.price-tag {
-    margin: 20px 0;
-    font-size: 1.5rem;
-}
-
-.old-price {
-    text-decoration: line-through;
-    color: #888;
-    margin-right: 10px;
-}
-
-.new-price {
+.curation-badge {
+    background: var(--secondary-color);
+    color: #000;
+    display: inline-block;
+    padding: 8px 15px;
+    border-radius: 5px;
     font-weight: bold;
-    color: var(--secondary-color);
-    font-size: 2.5rem;
-}
-
-.cta-button {
-    display: block;
-    background-color: #25d366; /* Verde WhatsApp */
-    color: white;
-    padding: 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.3rem;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    transition: transform 0.3s ease;
-}
-
-.cta-button:hover {
-    transform: scale(1.05);
-}
-
-.features {
-    background-color: #222;
-    padding: 30px 0;
-    border-radius: 20px 20px 0 0;
-    margin-top: 40px;
-    text-align: left;
-}
-
-.features ul {
-    list-style: none;
-    padding: 0;
-}
-
-.features li {
-    margin-bottom: 15px;
-    font-size: 1.1rem;
-}
-
-.limited {
-    color: #ffcc00;
+    margin-bottom: 20px;
     font-size: 0.9rem;
-    margin-top: 10px;
+    text-transform: uppercase;
 }
 
-footer {
-    padding: 20px;
-    font-size: 0.8rem;
-    color: #555;
+.how-it-works {
+    background-color: #111;
+    padding: 40px 0;
+    border-top: 2px solid var(--primary-color);
 }
 
+.step {
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.step h4 {
+    color: var(--secondary-color);
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+}
+
+.step p {
+    color: #bbb;
+    font-size: 1rem;
+    line-height: 1.4;
+}
