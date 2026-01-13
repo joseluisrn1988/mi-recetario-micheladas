@@ -3,69 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetario Maestro - Micheladas MasterLab</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>MasterLab - Recetario Maestro de Micheladas</title>
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'TU_ID_DE_PIXEL'); // <-- REEMPLAZA TU ID AQUÍ
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=TU_ID_DE_PIXEL&ev=PageView&noscript=1"
+    /></noscript>
+    <style>
+        :root {
+            --primary: #ffcc00; /* Amarillo Cerveza */
+            --dark: #1a1a1a;
+            --white: #ffffff;
+            --accent: #ff4500;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: var(--dark); color: var(--white); line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; text-align: center; }
+        
+        /* Header / Hero */
+        header { padding: 40px 20px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=1000'); background-size: cover; border-bottom: 5px solid var(--primary); }
+        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 10px; text-transform: uppercase; }
+        .subtitle { font-size: 1.2rem; margin-bottom: 20px; color: #ccc; }
+        
+        /* Video Container */
+        .video-box { background: #000; border: 3px solid var(--primary); border-radius: 10px; margin: 20px 0; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+
+        /* CTA Button */
+        .btn-cta { background-color: var(--accent); color: white; padding: 20px 40px; font-size: 1.5rem; font-weight: bold; text-decoration: none; border-radius: 50px; display: inline-block; margin: 20px 0; transition: transform 0.3s; border: none; cursor: pointer; }
+        .btn-cta:hover { transform: scale(1.05); background-color: #e63e00; }
+        .price { font-size: 2rem; color: var(--primary); font-weight: bold; display: block; margin-top: 10px; }
+        .old-price { text-decoration: line-through; color: #888; font-size: 1.2rem; }
+
+        /* Sections */
+        .section { padding: 40px 20px; border-bottom: 1px solid #333; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, min-minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
+        .card { background: #222; padding: 20px; border-radius: 10px; border-top: 3px solid var(--primary); }
+        h2 { color: var(--primary); }
+        ul { text-align: left; display: inline-block; margin: 0 auto; }
+        
+        footer { padding: 20px; font-size: 0.8rem; color: #666; }
+    </style>
 </head>
 <body>
 
+    <header>
+        <div class="container">
+            <p style="color: var(--primary); font-weight: bold;">EL SECRETO DE LOS NEGOCIOS LEGENDARIOS</p>
+            <h1>Domina el Arte de la Michelada Premium</h1>
+            <p class="subtitle">Descubre el sistema de 21 recetas estandarizadas que NO se aguán y generan clientes fieles.</p>
+        </div>
+    </header>
+
     <div class="container">
-        <header>
-            <img src="https://raw.githubusercontent.com/joseluisrn1988/mi-recetario-micheladas/refs/heads/main/Micheladas(1).png" alt="Logo MasterLab" class="logo">
-            <h1>MICHELADAS MASTERLAB</h1>
-            <p class="tagline">La ciencia del sabor detrás de las tendencias</p>
-            <img src="https://raw.githubusercontent.com/joseluisrn1988/mi-recetario-micheladas/refs/heads/main/portada.png" alt="Portada" class="portada">
-        </header>
+        <div class="video-box">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/TU_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        </div>
 
-        <section class="hero">
-            <div class="curation-badge">🔥 EL RECETARIO MÁS COMPLETO DE 2025</div>
-            <h2>Domina las recetas que dominan el mercado</h2>
-            <p>No improvises. Basado en el análisis de más de 2.1 mil millones de vistas en TikTok[cite: 5].</p>
-            
-            <div class="price-tag">
-                <span class="old-price">$249 MXN</span>
-                <span class="new-price">$99 MXN</span>
-            </div>
-            <a href="#" id="btn-whatsapp" class="cta-button">¡QUIERO EL RECETARIO MAESTRO!</a>
-        </section>
-
-        <section class="how-it-works">
-            <h3>LO QUE VAS A DOMINAR:</h3>
-            <div class="step">
-                <h4>✅ El Top 5 de Ventas</h4>
-                <p>Clamato, Cubana, Tamarindo, Mango y Camarones. Las que generan el 68% de las ventas en México[cite: 5, 23, 26].</p>
-            </div>
-            <div class="step">
-                <h4>✅ Guía "Anticerrores"</h4>
-                <p>Aprende por qué el limón embotellado arruina tu mezcla y cómo mantener la carbonatación perfecta[cite: 16, 19, 34].</p>
-            </div>
-            <div class="step">
-                <h4>✅ Recetas Premium</h4>
-                <p>Desde Micheladas con Aguachile hasta Carne Tártara. Sabor de restaurante en tu casa[cite: 89, 99].</p>
-            </div>
-            <img src="https://raw.githubusercontent.com/joseluisrn1988/mi-recetario-micheladas/refs/heads/main/Portada2.png" alt="Portada" class="portada">
-        </section>
-
-        <section class="features">
-            <h3>DETALLES DEL MANUAL:</h3>
-            <ul>
-                <li>📊 31 páginas de contenido técnico y visual.</li>
-                <li>🍋 Medidas exactas en mililitros para sabor estándar[cite: 12, 30].</li>
-                <li>🌎 Variedades regionales: Sonora, Jalisco, Colombia y Chile[cite: 178, 201, 217, 228].</li>
-                <li>📩 Entrega inmediata en formato PDF.</li>
-            </ul>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 Micheladas MasterLab. Todos los derechos reservados.</p>
-        </footer>
+        <button onclick="trackWpp()" class="btn-cta">
+            ¡SÍ, QUIERO EL RECETARIO AHORA!
+            <span class="old-price">$499</span>
+            <span class="price">SOLO $99 MXN</span>
+        </button>
+        <p>⚠️ Oferta válida solo por hoy</p>
     </div>
 
-    <script src="script.js"></script>
+    <section class="section">
+        <div class="container">
+            <h2>¿Para quién es MasterLab?</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Emprendedores</h3>
+                    <p>Monta tu negocio desde casa con mínima inversión y máxima rentabilidad.</p>
+                </div>
+                <div class="card">
+                    <h3>Dueños de Bar</h3>
+                    <p>Estandariza tus recetas para que siempre sepan igual y evita desperdicios.</p>
+                </div>
+                <div class="card">
+                    <h3>Anfitriones</h3>
+                    <p>Sorprende a tus amigos con técnicas de autor y especialidades gourmet.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color: #111;">
+        <div class="container">
+            <h2>¿Qué vas a aprender?</h2>
+            <ul style="list-style: none; padding: 0;">
+                <li>✅ <b>Técnica de Densidades:</b> El secreto para que el hielo no agüe tu bebida.</li>
+                <li>✅ <b>21 Recetas Maestras:</b> Desde la Cubana hasta las "Venenosas" en Caguama.</li>
+                <li>✅ <b>Costeo Real:</b> Cuánto gastas y cuánto debes cobrar para ganar dinero.</li>
+                <li>✅ <b>Escarchados Artesanales:</b> Preparaciones que nadie más tiene.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Acceso Inmediato y Garantizado</h2>
+            <p>Al realizar tu pago, recibes el manual digital directamente en tu WhatsApp para que empieces hoy mismo.</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal_Pyatigorsk_2021.png" width="150" style="filter: grayscale(1);">
+            <p>Aceptamos OXXO, Transferencia y Tarjeta.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 MasterLab - Todos los derechos reservados.</p>
+            <p>Este sitio no es parte de Facebook o Meta Inc.</p>
+        </div>
+    </footer>
+
+    <script>
+        function trackWpp() {
+            // Evento para Facebook Pixel (Lead o Contact)
+            fbq('track', 'Contact', {
+                value: 99.00,
+                currency: 'MXN',
+                content_name: 'Recetario Maestro'
+            });
+
+            // Reemplaza el número de abajo con el tuyo
+            const phone = "521234567890"; 
+            const msg = encodeURIComponent("Hola Jose Luis, vengo de la página de MasterLab y quiero el Recetario por $99. ¿Me pasas los datos de pago?");
+            window.location.href = `https://wa.me/${phone}?text=${msg}`;
+        }
+    </script>
+
 </body>
 </html>
-
-
-
-
-
