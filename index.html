@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetario Maestro de Micheladas - El Único con Seguimiento Real</title>
+    <title>Recetario Maestro de Micheladas</title>
 
     <script>
     !function(f,b,e,v,n,t,s)
@@ -15,240 +15,344 @@
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    // OJO: REEMPLAZA LOS NÚMEROS '123456789' POR TU ID REAL
+    // REEMPLAZA CON TU ID REAL
     fbq('init', 'TU_ID_DE_PIXEL_AQUI'); 
     fbq('track', 'PageView');
     </script>
-
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=TU_ID_DE_PIXEL_AQUI&ev=PageView&noscript=1"
     /></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --fb-blue: #0866FF;
+            --fb-bg: #F0F2F5;
+            --fb-white: #FFFFFF;
+            --fb-text: #050505;
+            --fb-gray: #65676B;
+            --wa-green: #25D366;
+            --rojo-urgencia: #E41E3F;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    :root {
-        --fb-blue: #0866FF;
-        --fb-bg: #F0F2F5; /* El gris clásico de FB */
-        --fb-white: #FFFFFF;
-        --fb-text: #1C1E21;
-        --wa-green: #25D366;
-        --rojo-chamoy: #bc0000;
-        --amarillo-miche: #ffcc00;
-    }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--fb-bg);
+            color: var(--fb-text);
+            padding-top: 60px; /* Espacio para la navbar fija */
+        }
 
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--fb-bg); /* Fondo gris Facebook */
-        color: var(--fb-text);
-        line-height: 1.6;
-    }
+        /* 1. NAVBAR TIPO FACEBOOK */
+        .fb-navbar {
+            background-color: var(--fb-white);
+            height: 60px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
 
-    /* Header tipo Banner de FanPage */
-    .header {
-        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80');
-        background-size: cover;
-        background-position: center;
-        text-align: center;
-        padding: 40px 20px;
-        color: white;
-    }
+        .fb-logo-text {
+            color: var(--fb-blue);
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: -1px;
+        }
 
-    h1 {
-        font-family: 'Oswald', sans-serif;
-        font-size: 2.2rem;
-        color: var(--amarillo-miche);
-        text-transform: uppercase;
-        margin-bottom: 10px;
-    }
+        /* CONTENEDOR TIPO "FEED" */
+        .main-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--fb-white);
+            margin-bottom: 20px;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+            border-radius: 0 0 8px 8px; /* Redondeado solo abajo */
+            overflow: hidden;
+        }
 
-    /* Tarjetas tipo Post de Facebook */
-    .section {
-        padding: 20px;
-        max-width: 600px;
-        margin: 15px auto;
-        background: var(--fb-white);
-        border-radius: 8px;
-        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    }
+        /* HEADER INTERNO CON PERFIL */
+        .post-header {
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+        }
 
-    .usp-box {
-        border-left: 5px solid var(--fb-blue);
-        padding: 10px 20px;
-    }
+        .profile-pic {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #ddd;
+            /* Pon aquí tu foto de perfil si quieres */
+            background-image: url('https://via.placeholder.com/40'); 
+            background-size: cover;
+            margin-right: 10px;
+        }
 
-    .urgency-card {
-        background: #FFF0F0;
-        color: #D22B2B;
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-        border: 1px solid #FFDADA;
-    }
+        .profile-info h3 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+        }
 
-    .price-table {
-        text-align: center;
-    }
+        .profile-info span {
+            font-size: 0.8rem;
+            color: var(--fb-gray);
+            display: flex;
+            align-items: center;
+        }
 
-    .price-tag {
-        font-size: 3rem;
-        color: var(--fb-text);
-        font-weight: 800;
-    }
+        .post-text {
+            padding: 0 16px 10px 16px;
+            font-size: 1rem;
+        }
 
-    .order-bump {
-        background: #F0F2F5;
-        border: 1px solid #dddfe2;
-        padding: 15px;
-        margin: 10px 0;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        text-align: left;
-    }
+        /* 2. VIDEO RESPONSIVE */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
 
-    .order-bump input {
-        width: 22px;
-        height: 22px;
-        margin-right: 12px;
-        cursor: pointer;
-    }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
 
-    /* Botón de WhatsApp Estilo Facebook */
-    .cta-button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--wa-green);
-        color: white;
-        padding: 18px;
-        font-size: 1.3rem;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 6px;
-        margin-top: 20px;
-        transition: 0.3s;
-    }
+        /* 3. BOTÓN AZUL (FACEBOOK STYLE) */
+        .btn-fb-blue {
+            display: block;
+            background-color: var(--fb-blue);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-decoration: none;
+            margin: 10px 16px;
+            border-radius: 6px;
+        }
 
-    .cta-button:hover {
-        background-color: #1eb956;
-        transform: scale(1.02);
-    }
+        .btn-fb-blue:hover {
+            background-color: #0056b3;
+        }
 
-    .cta-button i {
-        font-size: 1.6rem;
-        margin-right: 10px;
-    }
+        /* SECCIONES DE CONTENIDO */
+        .section-content {
+            padding: 20px;
+        }
 
-    footer {
-        text-align: center;
-        padding: 20px;
-        font-size: 0.8rem;
-        color: #606770;
-    }
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></head>
+        .usp-box {
+            background: #F0F2F5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .urgency-card {
+            background: #FFF5F5;
+            color: var(--rojo-urgencia);
+            border: 1px solid #FFDada;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .price-table {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--fb-text);
+        }
+
+        .order-bump {
+            background: #F0F2F5;
+            border: 1px solid #ddd;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .order-bump input {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+
+        /* 4. BOTÓN WHATSAPP (ICONO GRANDE) */
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--wa-green);
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .btn-whatsapp i {
+            font-size: 2rem; /* ICONO MÁS GRANDE */
+            margin-right: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8rem;
+            color: var(--fb-gray);
+        }
+        
+        html {
+            scroll-behavior: smooth; /* Para que baje suave al dar clic */
+        }
+    </style>
+</head>
 <body>
 
-    <header class="header">
-        <h1>¡Domina el Arte de la Michelada Profesional!</h1>
-        <p class="subheadline">El único sistema con <strong>medidas exactas</strong> y acompañamiento real por Whatsapp para que te salgan perfectas desde la primera vez.</p>
-        <a href="#comprar" class="cta-button">¡SÍ, QUIERO LAS RECETAS!</a>
-    </header>
+    <div class="fb-navbar">
+        <div class="fb-logo-text">facebook</div>
+    </div>
 
-    <section class="section">
-        <div class="usp-box">
-            <h2>¿Por qué somos los ÚNICOS?</h2>
-            <p>Muchos venden PDFs que se quedan guardados en el celular. Nosotros somos una <strong>Estructura Sólida</strong>:</p>
-            <ul style="padding-left: 20px;">
-                <li>✅ <strong>Cero Adivinanzas:</strong> Gramos y mililitros exactos.</li>
-                <li>✅ <strong>Acompañamiento VIP:</strong> Grupo de WhatsApp para dudas reales.</li>
-                <li>✅ <strong>Formación Continua:</strong> Cada sábado subimos videos haciendo las micheladas de nuestro manual.</li>
-            </ul>
+    <div class="main-container">
+        
+        <div class="post-header">
+            <div class="profile-pic"></div>
+            <div class="profile-info">
+                <h3>Recetario Profesional de Micheladas</h3>
+                <span>Publicidad <i class="fas fa-globe-americas" style="font-size: 0.7rem; margin-left: 5px;"></i></span>
+            </div>
         </div>
-    </section>
 
-    <section class="section">
-        <div class="urgency-card">
-            <h3>⏳ ¡RELOJ CORRIENDO!</h3>
-            <p>Este sábado grabaremos el <strong>Video de la receta #3 de 21</strong>. El grupo cerrará sus puertas permanentemente en cuanto terminemos el recetario. No es una suscripción mensual de $500 pesos; es un pago único por un servicio personalizado.</p>
+        <div class="post-text">
+            ¡Domina el arte! 🍺 Medidas exactas, videos cada sábado y soporte real. Mira el video 👇
         </div>
-    </section>
 
-<section class="section" id="comprar">
-        <div class="price-table">
-            <h2>OBTENDRÁS NUESTRO RECETARIO MAESTRO DE LAS 21 MICHELADAS MÁS POPULARES</h2>
-            <p>Incluye el recetario en PDF + Acceso al Grupo VIP de acompañamiento.</p>
+        <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/TU_ID_DE_VIDEO?autoplay=1&mute=1" title="Video de ventas" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <a href="#comprar" class="btn-fb-blue">
+            QUIERO LAS RECETAS
+        </a>
+
+        <div class="section-content">
             
-            <div class="price-tag" id="precio-display">$99 MXN</div>
-            
-            <div class="order-bump">
-                <input type="checkbox" id="bump-pulpas" class="miche-checkbox"> 
-                <label for="bump-pulpas" style="cursor: pointer;">
-                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de "Pulpas para escarchados" <strong>$49 MXN</strong> extra.
-                </label>
+            <div class="usp-box">
+                <strong>¿Por qué somos los ÚNICOS?</strong>
+                <ul style="padding-left: 20px; margin-top: 5px;">
+                    <li>✅ Gramos y mililitros exactos (Cero adivinanzas).</li>
+                    <li>✅ Grupo VIP para dudas reales.</li>
+                    <li>✅ Video nuevo cada sábado.</li>
+                </ul>
             </div>
 
-            <div class="order-bump">
-                <input type="checkbox" id="bump-petroleos" class="miche-checkbox"> 
-                <label for="bump-petroleos" style="cursor: pointer;">
-                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de "Petróleos, Curados de clamatos y Clamatos caseros" por solo <strong>$49 MXN</strong> extra.
-                </label>
+            <div class="urgency-card">
+                ⏳ ¡CORRE! Este sábado grabamos el Video #3. <br>El grupo cierra al terminar el recetario.
             </div>
 
-            <a href="#" id="btn-comprar" class="cta-button" onclick="fbq('track', 'Contact');"><i class="fab fa-whatsapp"></i> OBTENER POR WHATSAPP</a>
-            
-            <p style="font-size: 0.9rem; margin-top: 10px;">💳 Pago seguro vía OXXO o Transferencia.</p>
+            <div class="price-table" id="comprar">
+                <h2 style="font-size: 1.1rem; margin-bottom: 5px;">RECETARIO MAESTRO (21 RECETAS)</h2>
+                <p style="font-size: 0.9rem; color: #65676B; margin: 0;">PDF + Acceso a Grupo VIP</p>
+                
+                <div class="price-tag" id="precio-display">$99 MXN</div>
+
+                <div class="order-bump">
+                    <input type="checkbox" id="bump-pulpas">
+                    <label for="bump-pulpas">
+                        <strong>+ $49:</strong> Recetario de Pulpas Artesanales.
+                    </label>
+                </div>
+
+                <div class="order-bump">
+                    <input type="checkbox" id="bump-petroleos">
+                    <label for="bump-petroleos">
+                        <strong>+ $49:</strong> Recetario de Petróleos y Clamatos.
+                    </label>
+                </div>
+
+                <a href="#" id="btn-wa" class="btn-whatsapp" onclick="fbq('track', 'Contact');">
+                    <i class="fab fa-whatsapp"></i> OBTENER POR WHATSAPP
+                </a>
+
+                <p style="font-size: 0.8rem; color: #65676B; margin-top: 10px;">
+                    🔒 Pago seguro vía OXXO o Transferencia.
+                </p>
+            </div>
         </div>
-    </section>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Recetario de Petróleos - Villagrán, Gto.<br>
-        Este sitio no forma parte de Facebook Inc.</p>
+        <p>Meta © 2026</p>
+        <p style="font-size: 0.7rem;">Este sitio no es parte de Facebook o Facebook Inc.</p>
     </footer>
 
-<script>
-    const checkboxPulpas = document.getElementById('bump-pulpas');
-    const checkboxPetroleos = document.getElementById('bump-petroleos');
-    const precioDisplay = document.getElementById('precio-display');
-    const botonCompra = document.getElementById('btn-comprar');
-    
-    const telefono = "524111989469"; // Tu número con código de país
+    <script>
+        const cbPulpas = document.getElementById('bump-pulpas');
+        const cbPetroleos = document.getElementById('bump-petroleos');
+        const display = document.getElementById('precio-display');
+        const btnWa = document.getElementById('btn-wa');
+        
+        const telefono = "524111989469"; // Tu número
 
-    function actualizarVenta() {
-        let precioFinal = 99;
-        let mensaje = "Hola! Vi tu video en Facebook y quiero el Recetario Maestro de Micheladas ($99)";
+        function actualizar() {
+            let total = 99;
+            // Mensaje base
+            let msg = "Hola! Vi tu video en Facebook y quiero el Recetario Maestro de Micheladas ($99)";
 
-        if (checkboxPulpas.checked && checkboxPetroleos.checked) {
-            precioFinal = 197;
-            mensaje = "Hola! Quiero el PAQUETE COMPLETO: Micheladas + Pulpas + Petróleos por $197. ¿Me pasas los datos de pago?";
-        } else if (checkboxPulpas.checked) {
-            precioFinal = 148;
-            mensaje = "Hola! Quiero el combo de Micheladas + Pulpas Artesanales por $148. ¿Me pasas los datos?";
-        } else if (checkboxPetroleos.checked) {
-            precioFinal = 148;
-            mensaje = "Hola! Quiero el combo de Micheladas + Petróleos y Clamatos por $148. ¿Me pasas los datos?";
+            if(cbPulpas.checked && cbPetroleos.checked) {
+                total = 197;
+                msg = "Hola! Quiero el PAQUETE COMPLETO: Micheladas + Pulpas + Petroleos por $197";
+            } else if(cbPulpas.checked) {
+                total = 148;
+                msg = "Hola! Quiero el combo de Micheladas + Pulpas Artesanales por $148";
+            } else if(cbPetroleos.checked) {
+                total = 148;
+                msg = "Hola! Quiero el combo de Micheladas + Petroleos y Clamatos por $148";
+            }
+
+            // Solo actualizamos el precio visual y el link, NO EL TEXTO DEL BOTÓN
+            display.innerHTML = `$${total} MXN`;
+            btnWa.href = `https://wa.me/${telefono}?text=${encodeURIComponent(msg)}`;
         }
 
-        precioDisplay.innerHTML = `$${precioFinal} MXN`;
+        cbPulpas.addEventListener('change', actualizar);
+        cbPetroleos.addEventListener('change', actualizar);
         
-        // Creamos el link de WhatsApp dinámico
-        botonCompra.href = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-        
-        if (precioFinal > 99) {
-            botonCompra.innerHTML = '<i class="fab fa-whatsapp"></i> ¡QUIERO EL COMBO COMPLETO!';
-        } else {
-            botonCompra.innerHTML = '<i class="fab fa-whatsapp"></i> OBTENER POR WHATSAPP';
-        }
-    }
-
-    checkboxPulpas.addEventListener('change', actualizarVenta);
-    checkboxPetroleos.addEventListener('change', actualizarVenta);
-    
-    // Inicializar link al cargar la página
-    actualizarVenta();
-</script>
+        // Ejecutar al inicio
+        actualizar();
+    </script>
 
 </body>
 </html>
