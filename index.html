@@ -25,134 +25,130 @@
     /></noscript>
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --rojo-chamoy: #bc0000;
-            --amarillo-miche: #ffcc00;
-            --negro: #1a1a1a;
-            --blanco: #ffffff;
-        }
+<style>
+    :root {
+        --fb-blue: #0866FF;
+        --fb-bg: #F0F2F5; /* El gris clásico de FB */
+        --fb-white: #FFFFFF;
+        --fb-text: #1C1E21;
+        --wa-green: #25D366;
+        --rojo-chamoy: #bc0000;
+        --amarillo-miche: #ffcc00;
+    }
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--negro);
-            color: var(--blanco);
-            line-height: 1.6;
-        }
+    body {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--fb-bg); /* Fondo gris Facebook */
+        color: var(--fb-text);
+        line-height: 1.6;
+    }
 
-        .header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            padding: 60px 20px;
-        }
+    /* Header tipo Banner de FanPage */
+    .header {
+        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80');
+        background-size: cover;
+        background-position: center;
+        text-align: center;
+        padding: 40px 20px;
+        color: white;
+    }
 
-        h1 {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.5rem;
-            color: var(--amarillo-miche);
-            text-transform: uppercase;
-            margin-bottom: 10px;
-            line-height: 1.1;
-        }
+    h1 {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2.2rem;
+        color: var(--amarillo-miche);
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
 
-        .subheadline {
-            font-size: 1.2rem;
-            font-weight: bold;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+    /* Tarjetas tipo Post de Facebook */
+    .section {
+        padding: 20px;
+        max-width: 600px;
+        margin: 15px auto;
+        background: var(--fb-white);
+        border-radius: 8px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
 
-        .cta-button {
-            display: inline-block;
-            background-color: #25D366; /* Verde WhatsApp/Venta */
-            color: white;
-            padding: 20px 40px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            margin-top: 30px;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            animation: pulse 2s infinite;
-            cursor: pointer;
-        }
+    .usp-box {
+        border-left: 5px solid var(--fb-blue);
+        padding: 10px 20px;
+    }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+    .urgency-card {
+        background: #FFF0F0;
+        color: #D22B2B;
+        padding: 20px;
+        border-radius: 8px;
+        text-align: center;
+        border: 1px solid #FFDADA;
+    }
 
-        .section {
-            padding: 40px 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+    .price-table {
+        text-align: center;
+    }
 
-        .usp-box {
-            background-color: #2a2a2a;
-            border-left: 5px solid var(--amarillo-miche);
-            padding: 20px;
-            margin: 20px 0;
-            text-align: left;
-        }
+    .price-tag {
+        font-size: 3rem;
+        color: var(--fb-text);
+        font-weight: 800;
+    }
 
-        .urgency-card {
-            background: var(--rojo-chamoy);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            border: 2px dashed white;
-        }
+    .order-bump {
+        background: #F0F2F5;
+        border: 1px solid #dddfe2;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+    }
 
-        .price-table {
-            background: white;
-            color: black;
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-        }
+    .order-bump input {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+        cursor: pointer;
+    }
 
-        .price-tag {
-            font-size: 3.5rem;
-            color: var(--rojo-chamoy);
-            font-weight: 900;
-            margin: 10px 0;
-        }
+    /* Botón de WhatsApp Estilo Facebook */
+    .cta-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--wa-green);
+        color: white;
+        padding: 18px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 6px;
+        margin-top: 20px;
+        transition: 0.3s;
+    }
 
-        .order-bump {
-            background: #fff9c4;
-            border: 2px dashed #fbc02d;
-            color: #333;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 8px;
-            text-align: left;
-            display: flex;
-            align-items: center;
-            font-size: 1rem;
-        }
+    .cta-button:hover {
+        background-color: #1eb956;
+        transform: scale(1.02);
+    }
 
-        .order-bump input {
-            width: 25px;
-            height: 25px;
-            margin-right: 15px;
-            cursor: pointer;
-        }
+    .cta-button i {
+        font-size: 1.6rem;
+        margin-right: 10px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            font-size: 0.8rem;
-            opacity: 0.7;
-        }
-    </style>
-</head>
+    footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.8rem;
+        color: #606770;
+    }
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></head>
 <body>
 
     <header class="header">
@@ -182,7 +178,7 @@
 
 <section class="section" id="comprar">
         <div class="price-table">
-            <h2>OBTENDRÁS NUESTRO RECETARIO MAESTRO DE LAS 21 RECETAS MÁS POPULARES</h2>
+            <h2>OBTENDRÁS NUESTRO RECETARIO MAESTRO DE LAS 21 MICHELADAS MÁS POPULARES</h2>
             <p>Incluye el recetario en PDF + Acceso al Grupo VIP de acompañamiento.</p>
             
             <div class="price-tag" id="precio-display">$99 MXN</div>
@@ -190,18 +186,18 @@
             <div class="order-bump">
                 <input type="checkbox" id="bump-pulpas" class="miche-checkbox"> 
                 <label for="bump-pulpas" style="cursor: pointer;">
-                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de Pulpas Artesanales por solo <strong>$49 MXN</strong> extra (un recetario con 9 recetas diferentes para preparar las pastas para escarchar).
+                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de "Pulpas para escarchados" <strong>$49 MXN</strong> extra.
                 </label>
             </div>
 
             <div class="order-bump">
                 <input type="checkbox" id="bump-petroleos" class="miche-checkbox"> 
                 <label for="bump-petroleos" style="cursor: pointer;">
-                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de "Petróleos, Clamatos preparados y caseros" por solo <strong>$49 MXN</strong> extra (Un recetario con 5 petroleos de diferentes estilos, 2 recetas de curados de clamato listos para mezclar con tu cerveza favorita y 2 clamatos caseros artesanales con ingredientes naturales.)
+                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de "Petróleos, Curados de clamatos y Clamatos caseros" por solo <strong>$49 MXN</strong> extra.
                 </label>
             </div>
 
-            <a href="TU_LINK_SOLO_99" id="btn-comprar" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">OBTENER AHORA</a>
+            <a href="#" id="btn-comprar" class="cta-button" onclick="fbq('track', 'Contact');"><i class="fab fa-whatsapp"></i> OBTENER POR WHATSAPP</a>
             
             <p style="font-size: 0.9rem; margin-top: 10px;">💳 Pago seguro vía OXXO o Transferencia.</p>
         </div>
@@ -217,43 +213,41 @@
     const checkboxPetroleos = document.getElementById('bump-petroleos');
     const precioDisplay = document.getElementById('precio-display');
     const botonCompra = document.getElementById('btn-comprar');
-
-    // CONFIGURA TUS LINKS AQUÍ ABAJO:
-    const links = {
-        base: "TU_LINK_SOLO_99",                // Solo el de $99
-        pulpas: "TU_LINK_99_MAS_PULPAS",        // $99 + $49 = $148
-        petroleos: "TU_LINK_99_MAS_PETROLEOS",  // $99 + $49 = $148
-        todo: "TU_LINK_TODO_COMPLETO"           // $99 + $49 + $49 = $197
-    };
+    
+    const telefono = "524111989469"; // Tu número con código de país
 
     function actualizarVenta() {
         let precioFinal = 99;
-        let linkFinal = links.base;
+        let mensaje = "Hola! Vi tu video en Facebook y quiero el Recetario Maestro de Micheladas ($99)";
 
         if (checkboxPulpas.checked && checkboxPetroleos.checked) {
             precioFinal = 197;
-            linkFinal = links.todo;
+            mensaje = "Hola! Quiero el PAQUETE COMPLETO: Micheladas + Pulpas + Petróleos por $197. ¿Me pasas los datos de pago?";
         } else if (checkboxPulpas.checked) {
             precioFinal = 148;
-            linkFinal = links.pulpas;
+            mensaje = "Hola! Quiero el combo de Micheladas + Pulpas Artesanales por $148. ¿Me pasas los datos?";
         } else if (checkboxPetroleos.checked) {
             precioFinal = 148;
-            linkFinal = links.petroleos;
+            mensaje = "Hola! Quiero el combo de Micheladas + Petróleos y Clamatos por $148. ¿Me pasas los datos?";
         }
 
         precioDisplay.innerHTML = `$${precioFinal} MXN`;
-        botonCompra.href = linkFinal;
         
-        // Cambiar el texto del botón si lleva más cosas
+        // Creamos el link de WhatsApp dinámico
+        botonCompra.href = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+        
         if (precioFinal > 99) {
-            botonCompra.innerHTML = "¡QUIERO EL COMBO COMPLETO!";
+            botonCompra.innerHTML = '<i class="fab fa-whatsapp"></i> ¡QUIERO EL COMBO COMPLETO!';
         } else {
-            botonCompra.innerHTML = "OBTENER AHORA";
+            botonCompra.innerHTML = '<i class="fab fa-whatsapp"></i> OBTENER POR WHATSAPP';
         }
     }
 
     checkboxPulpas.addEventListener('change', actualizarVenta);
     checkboxPetroleos.addEventListener('change', actualizarVenta);
+    
+    // Inicializar link al cargar la página
+    actualizarVenta();
 </script>
 
 </body>
