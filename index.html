@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recetario Maestro de Micheladas - El Único con Seguimiento Real</title>
-    
+
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -14,7 +14,9 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'TU_ID_DE_PIXEL_AQUI'); // <--- REEMPLAZA ESTO
+    
+    // OJO: REEMPLAZA LOS NÚMEROS '123456789' POR TU ID REAL
+    fbq('init', 'TU_ID_DE_PIXEL_AQUI'); 
     fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -22,42 +24,208 @@
     /></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* (Mismo CSS que el anterior...) */
-        :root { --rojo-chamoy: #bc0000; --amarillo-miche: #ffcc00; --negro: #1a1a1a; --blanco: #ffffff; }
-        body { font-family: 'Roboto', sans-serif; margin: 0; background-color: var(--negro); color: var(--blanco); text-align: center; }
-        .header { padding: 60px 20px; background: #000; }
-        h1 { font-family: 'Oswald', sans-serif; color: var(--amarillo-miche); font-size: 2.2rem; }
-        .cta-button { display: inline-block; background: var(--rojo-chamoy); color: #fff; padding: 18px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; animation: pulse 2s infinite; }
-        .price-table { background: #fff; color: #000; margin: 20px; padding: 30px; border-radius: 15px; }
-        .order-bump { background: #fff9c4; border: 2px dashed #fbc02d; padding: 15px; margin: 15px 0; font-size: 0.9rem; }
-        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        :root {
+            --rojo-chamoy: #bc0000;
+            --amarillo-miche: #ffcc00;
+            --negro: #1a1a1a;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--negro);
+            color: var(--blanco);
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            color: var(--amarillo-miche);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            line-height: 1.1;
+        }
+
+        .subheadline {
+            font-size: 1.2rem;
+            font-weight: bold;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #25D366; /* Verde WhatsApp/Venta */
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 30px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            animation: pulse 2s infinite;
+            cursor: pointer;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .section {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .usp-box {
+            background-color: #2a2a2a;
+            border-left: 5px solid var(--amarillo-miche);
+            padding: 20px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .urgency-card {
+            background: var(--rojo-chamoy);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px dashed white;
+        }
+
+        .price-table {
+            background: white;
+            color: black;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .price-tag {
+            font-size: 3.5rem;
+            color: var(--rojo-chamoy);
+            font-weight: 900;
+            margin: 10px 0;
+        }
+
+        .order-bump {
+            background: #fff9c4;
+            border: 2px dashed #fbc02d;
+            color: #333;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .order-bump input {
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
 
     <header class="header">
-        <h1>¡DEJA DE ADIVINAR Y APRENDE COMO PRO!</h1>
-        <p>El único recetario con medidas exactas y acompañamiento en vivo cada sábado.</p>
+        <h1>¡Deja de "Tantear" y Empieza a Vender!</h1>
+        <p class="subheadline">El único sistema con <strong>medidas exactas</strong> y acompañamiento en vivo para que te salgan perfectas desde la primera vez.</p>
         <a href="#comprar" class="cta-button">¡SÍ, QUIERO LAS RECETAS!</a>
     </header>
 
-    <div style="padding: 20px; background: #222;">
-        <p>🚀 <strong>Video #3 este sábado:</strong> Si no entras hoy, te pierdes el acompañamiento en tiempo real.</p>
-    </div>
-
-    <div class="price-table" id="comprar">
-        <h2 style="margin:0;">TODO EL PACK</h2>
-        <div style="font-size: 3rem; color: #bc0000; font-weight: 900;">$99 MXN</div>
-        
-        <div class="order-bump">
-            <input type="checkbox" id="bump"> 
-            <strong>¡OFERTA ÚNICA!</strong> Agregar el Recetario de Pulpas Artesanales por solo <strong>$49 MXN</strong> extra.
+    <section class="section">
+        <div class="usp-box">
+            <h2>¿Por qué somos los ÚNICOS?</h2>
+            <p>Muchos venden PDFs que se quedan guardados en el celular. Nosotros somos una <strong>Estructura Sólida</strong>:</p>
+            <ul style="padding-left: 20px;">
+                <li>✅ <strong>Cero Adivinanzas:</strong> Gramos, onzas y mililitros exactos.</li>
+                <li>✅ <strong>Acompañamiento VIP:</strong> Grupo de WhatsApp para dudas reales.</li>
+                <li>✅ <strong>Formación Continua:</strong> Cada sábado cocinamos una receta juntos.</li>
+            </ul>
         </div>
+    </section>
 
-        <a href="https://pay.hotmart.com/TU_PRODUCTO" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">PAGAR Y UNIRME AL GRUPO</a>
-        
-        <p style="font-size: 0.8rem; color: #666; margin-top: 15px;">🔒 Pago procesado por Hotmart. Acceso inmediato.</p>
-    </div>
+    <section class="section">
+        <div class="urgency-card">
+            <h3>⏳ ¡RELOJ CORRIENDO!</h3>
+            <p>Este sábado grabaremos el <strong>Video #3 de 21</strong>. El grupo cerrará sus puertas permanentemente en cuanto terminemos el recetario. No es una suscripción mensual de $500 pesos; es un pago único por un servicio personalizado.</p>
+        </div>
+    </section>
+
+    <section class="section" id="comprar">
+        <div class="price-table">
+            <h2>RECETARIO MAESTRO (21 RECETAS)</h2>
+            <p>Acceso inmediato al PDF + Grupo VIP de acompañamiento.</p>
+            
+            <div class="price-tag" id="precio-display">$99 MXN</div>
+            
+            <div class="order-bump">
+                <input type="checkbox" id="bump-checkbox"> 
+                <label for="bump-checkbox" style="cursor: pointer;">
+                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de Pulpas Artesanales por solo <strong>$49 MXN</strong> extra. (Pack completo: $148)
+                </label>
+            </div>
+
+            <a href="TU_LINK_SOLO_99" id="btn-comprar" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">PAGAR Y UNIRME AL GRUPO</a>
+            
+            <p style="font-size: 0.9rem; margin-top: 10px;">💳 Pago seguro vía OXXO, Tarjeta o Transferencia.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Recetario de Petróleos - Villagrán, Gto.<br>
+        Este sitio no forma parte de Facebook Inc.</p>
+    </footer>
+
+    <script>
+        const checkbox = document.getElementById('bump-checkbox');
+        const precioDisplay = document.getElementById('precio-display');
+        const botonCompra = document.getElementById('btn-comprar');
+
+        // Poner aqui tus dos links reales
+        const linkSolo = "TU_LINK_SOLO_99"; 
+        const linkCombo = "TU_LINK_CON_BUMP"; // Link de $148
+
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                // Si marcan la casilla
+                precioDisplay.innerHTML = "$148 MXN";
+                botonCompra.href = linkCombo;
+                botonCompra.innerHTML = "¡QUIERO LOS DOS!";
+            } else {
+                // Si desmarcan la casilla
+                precioDisplay.innerHTML = "$99 MXN";
+                botonCompra.href = linkSolo;
+                botonCompra.innerHTML = "PAGAR Y UNIRME AL GRUPO";
+            }
+        });
+    </script>
 
 </body>
 </html>
