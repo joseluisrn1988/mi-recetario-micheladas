@@ -19,9 +19,11 @@
     fbq('init', 'TU_ID_DE_PIXEL_AQUI'); 
     fbq('track', 'PageView');
     </script>
+
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=TU_ID_DE_PIXEL_AQUI&ev=PageView&noscript=1"
     /></noscript>
+
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -154,8 +156,8 @@
 <body>
 
     <header class="header">
-        <h1>¡Deja de "Tantear" y Empieza a Vender!</h1>
-        <p class="subheadline">El único sistema con <strong>medidas exactas</strong> y acompañamiento en vivo para que te salgan perfectas desde la primera vez.</p>
+        <h1>¡Domina el Arte de la Michelada Profesional!</h1>
+        <p class="subheadline">El único sistema con <strong>medidas exactas</strong> y acompañamiento real por Whatsapp para que te salgan perfectas desde la primera vez.</p>
         <a href="#comprar" class="cta-button">¡SÍ, QUIERO LAS RECETAS!</a>
     </header>
 
@@ -164,9 +166,9 @@
             <h2>¿Por qué somos los ÚNICOS?</h2>
             <p>Muchos venden PDFs que se quedan guardados en el celular. Nosotros somos una <strong>Estructura Sólida</strong>:</p>
             <ul style="padding-left: 20px;">
-                <li>✅ <strong>Cero Adivinanzas:</strong> Gramos, onzas y mililitros exactos.</li>
+                <li>✅ <strong>Cero Adivinanzas:</strong> Gramos y mililitros exactos.</li>
                 <li>✅ <strong>Acompañamiento VIP:</strong> Grupo de WhatsApp para dudas reales.</li>
-                <li>✅ <strong>Formación Continua:</strong> Cada sábado cocinamos una receta juntos.</li>
+                <li>✅ <strong>Formación Continua:</strong> Cada sábado subimos videos haciendo las micheladas de nuestro manual.</li>
             </ul>
         </div>
     </section>
@@ -174,27 +176,34 @@
     <section class="section">
         <div class="urgency-card">
             <h3>⏳ ¡RELOJ CORRIENDO!</h3>
-            <p>Este sábado grabaremos el <strong>Video #3 de 21</strong>. El grupo cerrará sus puertas permanentemente en cuanto terminemos el recetario. No es una suscripción mensual de $500 pesos; es un pago único por un servicio personalizado.</p>
+            <p>Este sábado grabaremos el <strong>Video de la receta #3 de 21</strong>. El grupo cerrará sus puertas permanentemente en cuanto terminemos el recetario. No es una suscripción mensual de $500 pesos; es un pago único por un servicio personalizado.</p>
         </div>
     </section>
 
-    <section class="section" id="comprar">
+<section class="section" id="comprar">
         <div class="price-table">
-            <h2>RECETARIO MAESTRO (21 RECETAS)</h2>
-            <p>Acceso inmediato al PDF + Grupo VIP de acompañamiento.</p>
+            <h2>OBTENDRÁS NUESTRO RECETARIO MAESTRO DE LAS 21 RECETAS MÁS POPULARES</h2>
+            <p>Incluye el recetario en PDF + Acceso al Grupo VIP de acompañamiento.</p>
             
             <div class="price-tag" id="precio-display">$99 MXN</div>
             
             <div class="order-bump">
-                <input type="checkbox" id="bump-checkbox"> 
-                <label for="bump-checkbox" style="cursor: pointer;">
-                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de Pulpas Artesanales por solo <strong>$49 MXN</strong> extra. (Pack completo: $148)
+                <input type="checkbox" id="bump-pulpas" class="miche-checkbox"> 
+                <label for="bump-pulpas" style="cursor: pointer;">
+                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de Pulpas Artesanales por solo <strong>$49 MXN</strong> extra (un recetario con 9 recetas diferentes para preparar las pastas para escarchar).
                 </label>
             </div>
 
-            <a href="TU_LINK_SOLO_99" id="btn-comprar" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">PAGAR Y UNIRME AL GRUPO</a>
+            <div class="order-bump">
+                <input type="checkbox" id="bump-petroleos" class="miche-checkbox"> 
+                <label for="bump-petroleos" style="cursor: pointer;">
+                    <strong>¡OFERTA ÚNICA!</strong> Agrega el Recetario de "Petróleos, Clamatos preparados y caseros" por solo <strong>$49 MXN</strong> extra (Un recetario con 5 petroleos de diferentes estilos, 2 recetas de curados de clamato listos para mezclar con tu cerveza favorita y 2 clamatos caseros artesanales con ingredientes naturales.)
+                </label>
+            </div>
+
+            <a href="TU_LINK_SOLO_99" id="btn-comprar" class="cta-button" onclick="fbq('track', 'InitiateCheckout');">OBTENER AHORA</a>
             
-            <p style="font-size: 0.9rem; margin-top: 10px;">💳 Pago seguro vía OXXO, Tarjeta o Transferencia.</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">💳 Pago seguro vía OXXO o Transferencia.</p>
         </div>
     </section>
 
@@ -203,29 +212,49 @@
         Este sitio no forma parte de Facebook Inc.</p>
     </footer>
 
-    <script>
-        const checkbox = document.getElementById('bump-checkbox');
-        const precioDisplay = document.getElementById('precio-display');
-        const botonCompra = document.getElementById('btn-comprar');
+<script>
+    const checkboxPulpas = document.getElementById('bump-pulpas');
+    const checkboxPetroleos = document.getElementById('bump-petroleos');
+    const precioDisplay = document.getElementById('precio-display');
+    const botonCompra = document.getElementById('btn-comprar');
 
-        // Poner aqui tus dos links reales
-        const linkSolo = "TU_LINK_SOLO_99"; 
-        const linkCombo = "TU_LINK_CON_BUMP"; // Link de $148
+    // CONFIGURA TUS LINKS AQUÍ ABAJO:
+    const links = {
+        base: "TU_LINK_SOLO_99",                // Solo el de $99
+        pulpas: "TU_LINK_99_MAS_PULPAS",        // $99 + $49 = $148
+        petroleos: "TU_LINK_99_MAS_PETROLEOS",  // $99 + $49 = $148
+        todo: "TU_LINK_TODO_COMPLETO"           // $99 + $49 + $49 = $197
+    };
 
-        checkbox.addEventListener('change', function() {
-            if(this.checked) {
-                // Si marcan la casilla
-                precioDisplay.innerHTML = "$148 MXN";
-                botonCompra.href = linkCombo;
-                botonCompra.innerHTML = "¡QUIERO LOS DOS!";
-            } else {
-                // Si desmarcan la casilla
-                precioDisplay.innerHTML = "$99 MXN";
-                botonCompra.href = linkSolo;
-                botonCompra.innerHTML = "PAGAR Y UNIRME AL GRUPO";
-            }
-        });
-    </script>
+    function actualizarVenta() {
+        let precioFinal = 99;
+        let linkFinal = links.base;
+
+        if (checkboxPulpas.checked && checkboxPetroleos.checked) {
+            precioFinal = 197;
+            linkFinal = links.todo;
+        } else if (checkboxPulpas.checked) {
+            precioFinal = 148;
+            linkFinal = links.pulpas;
+        } else if (checkboxPetroleos.checked) {
+            precioFinal = 148;
+            linkFinal = links.petroleos;
+        }
+
+        precioDisplay.innerHTML = `$${precioFinal} MXN`;
+        botonCompra.href = linkFinal;
+        
+        // Cambiar el texto del botón si lleva más cosas
+        if (precioFinal > 99) {
+            botonCompra.innerHTML = "¡QUIERO EL COMBO COMPLETO!";
+        } else {
+            botonCompra.innerHTML = "OBTENER AHORA";
+        }
+    }
+
+    checkboxPulpas.addEventListener('change', actualizarVenta);
+    checkboxPetroleos.addEventListener('change', actualizarVenta);
+</script>
 
 </body>
 </html>
